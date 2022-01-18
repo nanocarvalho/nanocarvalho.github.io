@@ -2,9 +2,9 @@
 
 /* Variaveis */
 :root {
-  --main-color: #412f69;
-  --secondary-color: #ccc;
-  --text-color: #333;
+  --main-color: #EC255A;
+  --secondary-color: #FAEDF0;
+  --text-color: #0a0b29;
 
 }
 
@@ -22,6 +22,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url(../img/wave.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 /* Main container */
@@ -82,7 +85,7 @@ body {
 }
 
 .links-list li:hover {
-  background-color: #211638;
+  background-color: #8a174f;
 
 }
 
@@ -102,4 +105,19 @@ body {
 /* Footer */
 footer {
   text-align: center;
+}
+
+@media (max-height: 770px) {
+
+  body {
+    background-position-y: 32rem;
+  }
+}
+
+@media (max-width: 550px) {
+
+  body {
+    background-position: bottom;
+  }
+
 }
