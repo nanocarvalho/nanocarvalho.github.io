@@ -1,123 +1,126 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
 
-/* Variaveis */
+/* variables */
 :root {
-  --main-color: #EC255A;
-  --secondary-color: #FAEDF0;
-  --text-color: #0a0b29;
-
+    --clr-bg-light: #e8e8e8;
+    --clr-bg-dark: #212121;
+    --clr-accent-color: #fc016a;
 }
-
-/* Reset css */
-
+/* reset css */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* basic styling */
 body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url(../img/wave.svg);
-  background-repeat: no-repeat;
-  background-position: bottom;
+    /* position relative just to place the text on the corner */
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--clr-bg-dark);
+    font-family: 'Roboto', sans-serif;
+    /* bg image */
+    background-image: url("../img/wave.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
 }
 
-/* Main container */
-.main-container {
-  height: 100%;
-  width: 420px;
+li {
+    list-style: none;
 }
 
-
-/* Profile section */
-.profile-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+a {
+    text-decoration: none;
 }
+
+ p {
+    position: absolute;
+    color: var(--clr-bg-light);
+    opacity: 0.2;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    padding: 0 0 10px 10px;
+}
+
+/* card */
+.card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 340px;
+    width: 240px;
+    background-color: var(--clr-bg-dark);
+    border-radius: 0.6em;
+    border: var(--clr-bg-dark) 0.2rem solid;
+    transition: all 0.3s ease-out;
+    box-shadow: 0px 0px 15px var(--clr-accent-color);
+}
+
+.card:hover{
+    /* make the card slide to top */
+    transform: translateY(-1.4rem);
+    border: var(--clr-accent-color) 0.2em solid;
+    border-radius: 2rem 0 2rem 0;
+    box-shadow: 0px 0px 20px var(--clr-accent-color);
+}
+
+.card:hover .profile-image {
+    /* make the image bigger */
+    transform: scale(1.1);
+}
+
+.card:hover .profile-social ul {
+    /* reveal the icons */
+    opacity: 1;
+}
+
+.card h1 {
+    color: var(--clr-bg-light);
+    font-size: 1.4em;
+    font-weight: 400;
+    margin: 1em 0;
+    text-align: center;
+}
+
+/* profile image */
 
 .profile-image {
-  height: 120px;
-  width: 120px;
+    width: 96px;
+    height: 96px;
+    margin: 60px auto 10px auto;
+    transition: all 0.3s ease-in;
 }
 
 .profile-image img {
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+    width: 100%;
+    border-radius: 50%;
 }
 
-.profile-description {
-  color: var(--text-color);
-  text-align: center;
+/* profile social */
+
+ul {
+    display: flex;
+    padding-top: 2em;
+    /* hide the icons when not hovered */
+    opacity: 0;
+    transition: all 0.3s ease-in;
 }
 
-.profile-description h1 {
-  font-weight: 500;
+ul li {
+    margin-left: 1em;
 }
 
-.profile-description p {
-  font-weight: 300;
+ul li:first-child {
+    margin-left: 0;
 }
 
-/* Links section */
-.links-section {
-  text-align: center;
-}
-
-.links-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.links-list li {
-  width: auto;
-  list-style: none;
-  background-color: var(--main-color);
-  margin: 0.8rem;
-  border-radius: 0.6rem;
-  transition: all 0.3s ease;
-}
-
-.links-list li:hover {
-  background-color: #8a174f;
-
-}
-
-.links-list a {
-  display: block;
-  padding: 0.5rem;
-  color: white;
-  font-style: 1rem;
-  text-decoration: none;
-}
-
-.links-list img {
-  width: 0.7rem;
-  margin-left: 0.5rem;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-}
-
-@media (max-height: 770px) {
-
-  body {
-    background-position-y: 32rem;
-  }
-}
-
-@media (max-width: 550px) {
-
-  body {
-    background-position: bottom;
-  }
-
+ul li a {
+    cursor: pointer;
 }
