@@ -15,8 +15,6 @@
 
 /* basic styling */
 body {
-    /* position relative just to place the text on the corner */
-    position: relative;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -32,16 +30,6 @@ li {
 
 a {
     text-decoration: none;
-}
-
- p {
-    position: absolute;
-    color: var(--clr-bg-light);
-    opacity: 0.2;
-    text-align: center;
-    bottom: 0vh;
-    left: 0vw;
-    padding: 0 0 10px 10px;
 }
 
 /* card */
