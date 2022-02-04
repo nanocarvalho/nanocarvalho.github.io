@@ -22,13 +22,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     background-color: var(--clr-bg-dark);
     font-family: 'Roboto', sans-serif;
-    /* bg image */
-    background-image: url("../img/wave.svg");
-    background-repeat: no-repeat;
-    background-position: bottom;
 }
 
 li {
@@ -44,8 +39,8 @@ a {
     color: var(--clr-bg-light);
     opacity: 0.2;
     text-align: center;
-    bottom: 0;
-    left: 0;
+    bottom: 0vh;
+    left: 0vw;
     padding: 0 0 10px 10px;
 }
 
