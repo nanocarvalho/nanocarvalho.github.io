@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;400;900&display=swap');
 
 /* variables */
 :root {
-    --clr-bg-light: #e8e8e8;
-    --clr-bg-dark: #212121;
-    --clr-accent-color: #fc016a;
+    --clr-bg-light: white;
+    --terminal-toolbar: #2C2C2C;
+    --terminal-bg: #29174e;
+    --clr-accent-color: #db369c;
 }
 /* reset css */
 * {
@@ -20,8 +21,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--clr-bg-dark);
-    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(340deg, rgba(42,26,74,1) 0%, rgba(109,52,175,1) 100%);
+    font-family: 'Inconsolata', monospace;
 }
 
 li {
@@ -30,80 +31,95 @@ li {
 
 a {
     text-decoration: none;
-}
-
-/* card */
-.card {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 340px;
-    width: 240px;
-    background-color: var(--clr-bg-dark);
-    border-radius: 0.6em;
-    border: var(--clr-bg-dark) 0.2rem solid;
-    transition: all 0.3s ease-out;
-    box-shadow: 0px 0px 15px var(--clr-accent-color);
-}
-
-.card:hover{
-    /* make the card slide to top */
-    transform: translateY(-1.4rem);
-    border: var(--clr-accent-color) 0.2em solid;
-    border-radius: 2rem 0 2rem 0;
-    box-shadow: 0px 0px 20px var(--clr-accent-color);
-}
-
-.card:hover .profile-image {
-    /* make the image bigger */
-    transform: scale(1.1);
-}
-
-.card:hover .profile-social ul {
-    /* reveal the icons */
-    opacity: 1;
-}
-
-.card h1 {
     color: var(--clr-bg-light);
-    font-size: 1.4em;
-    font-weight: 400;
-    margin: 1em 0;
+}
+
+/* terminal container */
+.terminal-container {
+    background: var(--terminal-bg);
+    border-radius: 0.25rem;
+    border: 1px solid #a72876;
+}
+
+/* terminal container tab */
+.terminal-tab {
+    background-color: var(--terminal-toolbar);
     text-align: center;
+    border-radius: 0.25rem 0.25rem 0 0;
+    padding: 0.25rem 1rem 0.25rem 1rem;
 }
 
-/* profile image */
-
-.profile-image {
-    width: 96px;
-    height: 96px;
-    margin: 60px auto 10px auto;
-    transition: all 0.3s ease-in;
+.terminal-tab p {
+    color: var(--clr-bg-light);
+    font-weight: 300;
+    padding: 0.35rem;
 }
 
-.profile-image img {
-    width: 100%;
-    border-radius: 50%;
+/* terminal inside */
+.terminal-inside {
+    padding: 0.75rem 4rem 0 0.75rem;
+
 }
 
-/* profile social */
-
-ul {
-    display: flex;
-    padding-top: 2em;
-    /* hide the icons when not hovered */
-    opacity: 0;
-    transition: all 0.3s ease-in;
+.terminal-inside h1 {
+    color: var(--clr-accent-color);
+    font-family: 'Inconsolata', monospace;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 0.15rem;
+    word-spacing: -12px;
 }
 
-ul li {
-    margin-left: 1em;
+.terminal-inside > p {
+    font-family: 'Inconsolata', monospace;
+    color: var(--clr-bg-light);
+    margin-bottom: 2rem;
 }
 
-ul li:first-child {
-    margin-left: 0;
+/* social container */
+.social-menu {
+    margin-bottom: 2rem;
 }
 
-ul li a {
-    cursor: pointer;
+.social-menu li {
+    margin-bottom: 0.5rem ;
+}
+
+.social-menu li a {
+    font-family: 'Inconsolata', monospace;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.social-menu li a:hover {
+    color: rgb(145, 145, 145);
+}
+
+@media (min-width: 650px) {
+    .terminal-container {
+        width: 600px;
+        height: 450px;
+    }
+
+    .terminal-inside {
+        padding: 1rem 4rem 0 1rem;
+    }
+
+    .terminal-inside h1 {
+        font-size: 4rem;
+        margin-top: 2rem;
+    }
+    
+    .terminal-inside > p {
+        margin: 0.5rem 0 2rem 0;
+    }
+    
+    .social-menu li a {
+        font-size: 1.2rem;
+    }
+
+    .terminal-user {
+        font-weight: 300;
+        font-size: 1.2rem;
+    }
 }
