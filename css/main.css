@@ -70,7 +70,28 @@ a {
     word-spacing: -12px;
 }
 
-.terminal-inside > p {
+.terminal-inside p {
+    color: var(--clr-bg-light);
+    font-family: 'Inconsolata', monospace;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+
+}
+
+
+/* terminal edit */
+.terminal-edit-container {
+    display: flex;
+}
+.terminal-edit {
+    max-width: 12ch;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-left: 4px;
+}
+
+.terminal-user, .terminal-edit {
     font-family: 'Inconsolata', monospace;
     color: var(--clr-bg-light);
     margin-bottom: 2rem;
@@ -116,6 +137,11 @@ a {
     
     .social-menu li a {
         font-size: 1.2rem;
+    }
+
+    /* terminal edit */
+    .terminal-edit {
+        max-width: 44ch;  
     }
 
     .terminal-user {
