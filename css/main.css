@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;400&family=Orbitron:wght@900&display=swap');
 
 /* variables */
 :root {
     --clr-bg-light: white;
-    --terminal-toolbar: #2C2C2C;
-    --terminal-bg: #29174e;
+    --terminal-toolbar: #182436;
+    --terminal-bg: 	#192c46;
     --clr-accent-color: #db369c;
 }
 /* reset css */
@@ -21,7 +21,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(340deg, rgba(42,26,74,1) 0%, rgba(109,52,175,1) 100%);
+    background: linear-gradient(176deg, rgba(9,24,51,1) 0%, rgba(113,28,145,1) 100%);
     font-family: 'Inconsolata', monospace;
 }
 
@@ -63,9 +63,10 @@ a {
 
 .terminal-inside h1 {
     color: var(--clr-accent-color);
-    font-family: 'Inconsolata', monospace;
-    font-size: 2.2rem;
+    font-family: 'Orbitron', monospace;
+    font-size: 1.8rem;
     font-weight: bold;
+    text-shadow: 4px 4px 0 #04FBF6;
     margin-bottom: 0.15rem;
     word-spacing: -12px;
 }
@@ -116,6 +117,16 @@ a {
     color: rgb(145, 145, 145);
 }
 
+/* page visits */
+.visitors {
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 100;
+    color: var(--clr-bg-light);
+    opacity: 0.2;
+    margin: 1rem 0;
+}
+
 @media (min-width: 650px) {
     .terminal-container {
         width: 600px;
@@ -128,7 +139,6 @@ a {
 
     .terminal-inside h1 {
         font-size: 4rem;
-        margin-top: 2rem;
     }
     
     .terminal-inside > p {
@@ -148,4 +158,5 @@ a {
         font-weight: 300;
         font-size: 1.2rem;
     }
+
 }
