@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;400&family=Orbitron:wght@900&display=swap');
-
 /* variables */
 :root {
-    --clr-bg-light: white;
-    --terminal-toolbar: #182436;
-    --terminal-bg: 	#192c46;
-    --clr-accent-color: #db369c;
+    --clr-bg-light: #fff;
+    --clr-bg-main: #F96C77;
+    --pure-black: #000;
+    --clr-one: #eed359;
+    --clr-two: #5ecc9a;
+    --clr-three: #4885b8;
 }
 /* reset css */
 * {
@@ -21,8 +21,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(176deg, rgba(9,24,51,1) 0%, rgba(113,28,145,1) 100%);
-    font-family: 'Inconsolata', monospace;
+    background-color: var(--clr-bg-main);
+    font-family: 'Mulish', sans-serif;
 }
 
 li {
@@ -31,132 +31,125 @@ li {
 
 a {
     text-decoration: none;
-    color: var(--clr-bg-light);
 }
 
-/* terminal container */
-.terminal-container {
-    background: var(--terminal-bg);
-    border-radius: 0.25rem;
-    border: 1px solid #a72876;
+/* main container */
+.main-container {
+    background-color: var(--clr-bg-light);
+    border-radius: 1rem;
+    border: 2px solid var(--pure-black);
+    border-bottom: 6px solid var(--pure-black);
+    height: 45vh;
 }
 
-/* terminal container tab */
-.terminal-tab {
-    background-color: var(--terminal-toolbar);
+/* main text */
+.main-text {
+    margin: 2rem 1rem;
+    border-radius: 1rem 1rem 1rem;
+    border: 2px solid var(--pure-black);
+    border-bottom: 4px solid var(--pure-black);
+}
+
+.main-text h1 {
+    padding: 0.25rem;
+    font-size: 1.5rem;
+    font-weight: 800;
     text-align: center;
-    border-radius: 0.25rem 0.25rem 0 0;
-    padding: 0.25rem 1rem 0.25rem 1rem;
 }
 
-.terminal-tab p {
-    color: var(--clr-bg-light);
-    font-weight: 300;
-    padding: 0.35rem;
-}
-
-/* terminal inside */
-.terminal-inside {
-    padding: 0.75rem 4rem 0 0.75rem;
-
-}
-
-.terminal-inside h1 {
-    color: var(--clr-accent-color);
-    font-family: 'Orbitron', monospace;
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-shadow: 4px 4px 0 #04FBF6;
-    margin-bottom: 0.15rem;
-    word-spacing: -12px;
-}
-
-.terminal-inside p {
-    color: var(--clr-bg-light);
-    font-family: 'Inconsolata', monospace;
-    margin-bottom: 1rem;
-    opacity: 0.5;
-
-}
-
-
-/* terminal edit */
-.terminal-edit-container {
-    display: flex;
-}
-.terminal-edit {
-    max-width: 12ch;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    margin-left: 4px;
-}
-
-.terminal-user, .terminal-edit {
-    font-family: 'Inconsolata', monospace;
-    color: var(--clr-bg-light);
-    margin-bottom: 2rem;
+.main-text p {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 0.5rem;
 }
 
 /* social container */
+.social-container {
+    margin: 3rem 0.6rem 0.6rem 0.6rem;
+}
+
 .social-menu {
-    margin-bottom: 2rem;
+    display: flex;
 }
 
 .social-menu li {
-    margin-bottom: 0.5rem ;
+    border-radius: 1rem;
+    border: 2px solid var(--pure-black);
+    border-bottom: 4px solid var(--pure-black);
+    transition: transform 0.1s ease;
+    margin: 0 0 0.5rem 0.5rem;
+}
+
+.social-menu li:first-child {
+    margin: 0 0 0.5rem 0;
+}
+
+.social-menu li:hover {
+    border-bottom: 2px solid var(--pure-black);
+    transform: translateY(2px);
 }
 
 .social-menu li a {
-    font-family: 'Inconsolata', monospace;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
+    display: block;
+    padding: 1rem;
+    color: var(--pure-black);
+    font-weight: 900;
+    font-size: 1rem;
 }
 
-.social-menu li a:hover {
-    color: rgb(145, 145, 145);
+.li-color-1 {
+    background-color: var(--clr-one);
 }
 
-/* page visits */
-.visitors {
-    font-family: inherit;
-    font-size: 0.8rem;
-    font-weight: 100;
-    color: var(--clr-bg-light);
-    opacity: 0.2;
-    margin: 1rem 0;
+.li-color-2 {
+    background-color: var(--clr-two);
+}
+
+.li-color-3 {
+    background-color: var(--clr-three);
+}
+
+.li-color-1:hover, .li-color-2:hover, .li-color-3:hover {
+    filter: contrast(120%);
 }
 
 @media (min-width: 650px) {
-    .terminal-container {
-        width: 600px;
-        height: 450px;
+    .main-container {
+        min-width: 600px;
+        min-height: 250px;
     }
 
-    .terminal-inside {
-        padding: 1rem 4rem 0 1rem;
+    .main-text h1 {
+        font-size: 2rem;
     }
 
-    .terminal-inside h1 {
-        font-size: 4rem;
-    }
-    
-    .terminal-inside > p {
-        margin: 0.5rem 0 2rem 0;
-    }
-    
-    .social-menu li a {
-        font-size: 1.2rem;
+    .main-text p {
+        font-size: 1.1rem;
     }
 
-    /* terminal edit */
-    .terminal-edit {
-        max-width: 44ch;  
+    .social-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 3rem 0.6rem 0.6rem 0.6rem;
     }
 
-    .terminal-user {
-        font-weight: 300;
-        font-size: 1.2rem;
+    .social-menu {
+        flex-wrap: wrap;
     }
 
+    .social-menu li {
+        min-width: 150px;
+        margin: 0 0.5rem 0.5rem 0;
+    }
+
+    .social-menu li:first-child {
+        margin: 0 0.5rem 0.5rem 0;
+    }
+
+    .social-menu li:hover {
+        border-bottom: 2px solid var(--pure-black);
+        margin-bottom: 0.625rem;
+    }
 }
