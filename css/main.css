@@ -1,8 +1,9 @@
 :root {
-    --Accent: #7167d9;
-    --Dark: #3A354D;
-    --Mid: #9598A6;
-    --Light: #FFFFFF;
+    --Dark-bg: #111111;
+    --Medium-bg: #242424;
+    --Light-font: #fcfcfc;
+    --accent: #a0d468;
+    --accent-hover: #8cc152;
 }
 
 * {
@@ -11,134 +12,81 @@
     box-sizing: border-box;
 }
 
-li {
-    list-style: none;
-}
-
 a {
     text-decoration: none;
+    color: var(--accent);
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
 }
 
 body {
     min-height: 100vh;
     min-width: 100%;
-    font-family: 'Poppins', sans-serif;
-}
-
-/* header */
-header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-}
-
-.logo {
-    color: var(--Dark);
-    font-weight: 600;
-    font-size: 1.2rem;
-}
-
-.menu {
-    display: flex;
-    margin-right: 0.5rem;
-}
-
-.menu li {
-    margin-left: 1.2rem;
-}
-
-.menu li a {
-    color: var(--Dark);
-    transition: all 0.2s ease;
-}
-
-.menu li a:hover {
-    color: var(--Mid);
-}
-
-/* main body */
-main {
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--Dark-bg);
+    font-family: 'Mulish', sans-serif;
 }
 
-/* project container */
-.project-container {
-    margin: 1.2rem 0;
-    padding: 1.2rem;
-    text-align: center;
-}
-
-figure {
-    text-align: center;
-}
-
-figure figcaption {
-    color: var(--Dark);
-}
-
-.button {
-    display: block;
-    margin-top: 0.5rem;
-    padding: 0.2rem 0.4rem;
+.card {
+    max-width: 20rem;
+    background-color: var(--Medium-bg);
     border-radius: 0.2rem;
-    transition: all 0.2s ease;
-    font-weight: 500;
+    padding: 1.8rem;
 }
 
-.button.cta {
-    background-color: var(--Accent);
-    color: var(--Light);
+.avatar {
+    max-width: 36px;
+    align-self: flex-start;
 }
 
-.button.github {
-    border: 1px solid var(--Dark);
-    color: var(--Dark);
-}
-
-.button.cta:hover {
-    background-color: var(--Dark);   
-}
-
-.button.github:hover {
-    background-color: var(--Dark);
-    color: var(--Light);
-}
-
-/* footer */
-footer {
+.avatar img {
     width: 100%;
-    position: fixed;
-    bottom: 5px;
-    text-align: center;
+    border-radius: 50%;
 }
 
-footer p {
-    color: var(--Dark);
+.body-content {
+    margin-top: 0.8rem;
+    color: var(--Light-font);
+    line-height: 1.5;
 }
 
-footer p a {
-    color: var(--Accent);
+.body-content h2, .subtitle, .description {
+    margin-bottom: 0.8rem;
 }
+
 @media (min-width: 768px) {
-    header {
-        max-width: 80%;
-        margin: 0 auto;
+    .card {
+        max-width: 35rem;
+        padding: 2.5rem;
     }
 
-    .project-container {
-        margin-top: 2.5rem;
-
+    .avatar {
+        max-width: 48px;
     }
 
-    .buttons {
-        display: flex;
-        justify-content: center;
+    .body-content {
+        margin-top: 1.2rem;
     }
-    .button.cta {
-        margin-right: 0.5rem;
+    
+    .body-content h2, .subtitle, .description {
+        margin-bottom: 1.2rem;
     }
+}
+
+@media (min-width: 1200px) {
+    .card {
+        max-width: 45rem;
+        padding: 3rem;
+    }
+
+    .avatar {
+        max-width: 52px;
+    }
+    
 }
